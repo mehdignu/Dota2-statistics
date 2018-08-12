@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import Search from './containers/Search/Search';
-import {BrowserRouter} from 'react-router-dom';
+import Result from './containers/Result/Result';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Provider} from 'react-redux';
-import { createStore } from 'redux';
+import {createStore} from 'redux';
 import reducer from './store/reducer';
 
 const store = createStore(reducer);
@@ -12,7 +13,10 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <BrowserRouter>
-                    <Search/>
+                    <Switch>
+                        <Route path="/analytics" component={Result}/>
+                        <Route path="/" exact component={Search}/>
+                    </Switch>
                 </BrowserRouter>
             </Provider>
         );

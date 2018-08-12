@@ -13,10 +13,12 @@ class search extends Component {
 
     inputChangedHandler = (event) => {
         this.setState({name: event.target.value});
+        this.props.onSearch(event.target.value);
+
     };
 
     handleSubmit = (event) => {
-        this.props.onSeacrh(event.target.value);
+        this.props.history.push('/analytics');
         event.preventDefault();
     };
 
