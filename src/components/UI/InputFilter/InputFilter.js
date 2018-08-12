@@ -4,7 +4,6 @@ import classes from './InputFilter.css';
 const InputFilter = (props) => {
 
     let inputElement = null;
-console.log(props);
     switch (props.inputtype) {
         case ('input'):
             inputElement = <input onChange={props.onUpdate} className={classes.inputElement} {...props} />;
