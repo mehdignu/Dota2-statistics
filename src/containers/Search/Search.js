@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import Input from '../../components/UI/Input/Input';
+import InputFilter from '../../components/UI/InputFilter/InputFilter';
 import {connect} from 'react-redux';
 import * as actiontypes from '../../store/actions';
+import Aux from '../../hoc/Aux/Aux';
 
 class search extends Component {
 
@@ -11,23 +12,28 @@ class search extends Component {
     };
 
     inputChangedHandler = (event) => {
+        this.setState({name: event.target.value});
     };
 
+    handleSubmit = (event) => {
+        this.props.onSeacrh(event.target.value);
+        event.preventDefault();
+    };
 
     render() {
 
 
         let form = (
-            <form>
-                <Input inputtype="input" type="text" name="name"
-                       placeholder="player name / accountID" changed={() => this.inputChangedHandler()}/>;
+            <form onSubmit={this.handleSubmit}>
+                <InputFilter inputtype="input" type="text" name="name"
+                             placeholder="player name / accountID" onChange={this.inputChangedHandler}/>
             </form>
         );
 
         return (
-            <div>
+            <Aux>
                 {form}
-            </div>
+            </Aux>
         );
     }
 }
