@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
-import Layout from './hoc/Layout/Layout';
-import DotaStats from './containers/DotaStats/DotaStats';
+import Search from './containers/Search/Search';
+import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import { createStore } from 'redux';
+import reducer from './store/reducer';
+
+const store = createStore(reducer);
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <Layout>
-                    <DotaStats />
-                </Layout>
-            </div>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Search/>
+                </BrowserRouter>
+            </Provider>
         );
     }
 }
