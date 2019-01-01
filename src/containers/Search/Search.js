@@ -39,16 +39,21 @@ class search extends Component {
 
 
                 <div className={classes["text-box"]}>
-                    <img src="https://via.placeholder.com/150" alt="Logo" className={classes.logo}/>
 
-                    <h1 className={classes["heading-primary"]}>
-                        <span className={classes["heading-primary--main"]}>Dota2 stats</span>
-                        <span className={classes["heading-primary--sub"]}>Advanced analytics platform</span>
 
-                    </h1>
+                    <div className={classes["text-box-content"]}>
 
-                    {form}
+                        <img src="https://via.placeholder.com/150" alt="Logo" className={classes.logo}/>
 
+                        <h1 className={classes["heading-primary"]}>
+                            <span className={classes["heading-primary--main"]}>Dota2 stats</span>
+                            <span className={classes["heading-primary--sub"]}>Advanced analytics platform</span>
+
+                        </h1>
+
+                        {form}
+
+                    </div>
 
                 </div>
 

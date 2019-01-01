@@ -16,6 +16,15 @@
     height: 90%;
 }
 
+.text-box-content {
+    position: absolute;
+    min-width: 600px;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
 .logo {
     padding-top: 10%;
     display: block;
