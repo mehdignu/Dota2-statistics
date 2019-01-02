@@ -9,7 +9,7 @@ const layout = (props) => (
 
         <Toolbar/>
 
-        <main className={classes.Content}>
+        <main>
             {props.children}
         </main>
 

@@ -4,7 +4,7 @@ import classes from './Logo.css';
 
 const logo = (props) => (
     <div className={classes.Logo}>
-        <img src={logoComp} alt="DotaStats" />
+        <img src="https://via.placeholder.com/150" alt="DotaStats" />
     </div>
 );
 
