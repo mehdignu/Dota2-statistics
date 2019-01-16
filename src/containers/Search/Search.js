@@ -3,6 +3,7 @@ import InputFilter from '../../components/UI/InputFilter/InputFilter';
 import {connect} from 'react-redux';
 import * as actiontypes from '../../store/actions';
 import classes from './Search.css';
+import Aux from '../../hoc/Aux/Aux';
 
 
 class search extends Component {
@@ -35,6 +36,8 @@ class search extends Component {
         );
 
         return (
+
+            <Aux>
             <header className={classes.header}>
 
 
@@ -59,6 +62,15 @@ class search extends Component {
 
 
             </header>
+
+
+                <footer className={classes.footer}>
+
+                    boohoo
+
+                </footer>
+
+            </Aux>
         );
     }
 }

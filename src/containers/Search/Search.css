@@ -61,5 +61,20 @@
 .search-form {
     margin: auto;
     max-width: 650px;
+}
 
+.header:after {
+    content:"";
+    position:absolute;
+    width:100%;
+    bottom:1px;
+    z-index:-1;
+    transform:scale(1);
+    box-shadow: 10px 0px 8px 2px #000000;
+}
+
+.footer{
+    background-color: #410000;
+    background-size: cover;
+    background-position: top;
 }
