@@ -1,5 +1,11 @@
-import React from 'react';
+import React from 'react'
+import Aux from '../../../hoc/Aux/Aux'
 
-const profile = ( props ) => <p>Profile</p>;
+const person = (props) => (
 
-export default profile;
+    <Aux>
+        {props.name}
+    </Aux>
+);
+
+export default person;

@@ -1,2 +1,3 @@
 export const SEARCH_TERM = 'SEARCH_TERM';
 export const SUGGESTIONS_SEARCH = 'SUGGESTIONS_SEARCH';
+export const SHOW_PERSON = 'SHOW_PERSON';
