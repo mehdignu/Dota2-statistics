@@ -83,7 +83,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onSearch: (name) => dispatch({type: actiontypes.SEARCH, name: name})
+        onSearch: (name) => dispatch({type: actiontypes.SEARCH_TERM, name: name})
     }
 };
 
