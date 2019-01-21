@@ -1,16 +1,18 @@
 import React from 'react';
-import classes from './Toolbar.css';
-import Logo from '../../Logo/Logo';
 
 const toolbar = (props) => (
-    <header className={classes.Toolbar}>
-        <Logo/>
-        <div>Search</div>
 
-        <nav>
-            ...
-        </nav>
-    </header>
+
+    <ul >
+
+        <li><img src="https://via.placeholder.com/150" alt="DotaStats" /></li>
+
+        <li><a href="default.asp">Search</a></li>
+
+
+    </ul>
+
+
 );
 
 export default toolbar;

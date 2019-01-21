@@ -6,7 +6,6 @@ import {connect} from "react-redux";
 import * as params from '../../params';
 import Aux from '../../hoc/Aux/Aux';
 import {NavLink} from 'react-router-dom';
-import classes from './result.css';
 
 class result extends Component {
 

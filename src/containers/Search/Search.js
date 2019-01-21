@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import InputFilter from '../../components/UI/InputFilter/InputFilter';
 import {connect} from 'react-redux';
 import * as actiontypes from '../../store/actions';
-import classes from './Search.css';
+import classes from './Search.scss';
 import Aux from '../../hoc/Aux/Aux';
 
 
