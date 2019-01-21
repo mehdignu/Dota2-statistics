@@ -1,11 +1,12 @@
 import React from 'react';
+import classes from './Input.scss';
 
 const InputFilter = (props) => {
 
     let inputElement = null;
     switch (props.inputtype) {
         case ('input'):
-            inputElement = <input onChange={props.onUpdate}  {...props} />;
+            inputElement = <input onChange={props.onUpdate} className={classes.input}  {...props} />;
             break;
         case ('textarea'):
             inputElement = <textarea onChange={props.onUpdate}  {...props} />;
