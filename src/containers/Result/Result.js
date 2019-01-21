@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Layout from '../../hoc/Layout/Layout';
 import Profile from '../../components/Stats/Profile/Profile';
 import * as actiontypes from "../../store/actions";
 import {connect} from "react-redux";
