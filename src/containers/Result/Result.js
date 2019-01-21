@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import * as params from '../../params';
 import Aux from '../../hoc/Aux/Aux';
 import {NavLink} from 'react-router-dom';
+import classes from './Result.scss';
 
 class result extends Component {
 
@@ -41,7 +42,7 @@ class result extends Component {
 
             return (
 
-                <div />
+                <div/>
             );
         }
 
@@ -50,30 +51,41 @@ class result extends Component {
         const persons = this.props.suggestions
 
         //map the result into a list of detail links
-        .map(person => {
+            .map(person => {
 
 
-            return (
+                return (
 
-                <Aux key={key++}>
-                    <li>
+                    <div key={key++} className={classes["result-item"]}>
+                        <li>
+
                         <NavLink exact
                                  to={{pathname: '/#' + person.account_id}}
                                  onClick={() => this.props.onShowPerson(person)}>
 
-                            <Profile name={person.personaname}/>
 
+                                <img src={person.avatarfull} alt="Logo" className={classes["result-content__image"]}/>
+
+                                <div className={classes["result-content__info"]}>
+
+                                    <div className={classes["result-content__info--name"]}><b>Name </b>: {person.personaname}</div><br />
+
+                                    <div className={classes["result-content__info--account"]}><b>Account ID </b> : {person.account_id}</div><br />
+
+                                    <div className={classes["result-content__info--last-match"]}><b>last match time </b>: {person.last_match_time}</div><br/>
+                                </div>
                         </NavLink>
-                    </li>
-                </Aux>
-            );
+                        </li>
 
-        });
+                    </div>
+                );
+
+            });
 
         return (
-            <Aux>
+            <div className={classes["result-content"]}>
                 {persons}
-            </Aux>
+            </div>
         );
     }
 }
@@ -89,7 +101,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onShowPerson: (selectedPerson) => dispatch({type: actiontypes.SHOW_PERSON, loadedPerson: selectedPerson}),
-        onSearchForSuggestions: (suggestionsData) => dispatch({type: actiontypes.SUGGESTIONS_SEARCH, suggestionsData: suggestionsData})
+        onSearchForSuggestions: (suggestionsData) => dispatch({
+            type: actiontypes.SUGGESTIONS_SEARCH,
+            suggestionsData: suggestionsData
+        })
     }
 };
 
