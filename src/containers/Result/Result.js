@@ -20,7 +20,6 @@ class result extends Component {
                     response.json().then(json => {
 
                         this.props.onSearchForSuggestions(json);
-                        console.log(json)
                     })
 
                 }
@@ -57,22 +56,28 @@ class result extends Component {
                     <div key={key++} className={classes["result-item"]}>
                         <li>
 
-                        <NavLink exact
-                                 to={{pathname: '/#' + person.account_id}}
-                                 onClick={() => this.props.onShowPerson(person)}>
+                            <NavLink exact
+                                     to={{pathname: '/#' + person.account_id}}
+                                     onClick={() => this.props.onShowPerson(person.account_id)}>
 
 
                                 <img src={person.avatarfull} alt="Logo" className={classes["result-content__image"]}/>
 
                                 <div className={classes["result-content__info"]}>
 
-                                    <div className={classes["result-content__info--name"]}><b>Name </b>: {person.personaname}</div><br />
+                                    <div className={classes["result-content__info--name"]}>
+                                        <b>Name </b>: {person.personaname}</div>
+                                    <br/>
 
-                                    <div className={classes["result-content__info--account"]}><b>Account ID </b> : {person.account_id}</div><br />
+                                    <div className={classes["result-content__info--account"]}><b>Account
+                                        ID </b> : {person.account_id}</div>
+                                    <br/>
 
-                                    <div className={classes["result-content__info--last-match"]}><b>last match time </b>: {person.last_match_time}</div><br/>
+                                    <div className={classes["result-content__info--last-match"]}><b>last match
+                                        time </b>: {person.last_match_time}</div>
+                                    <br/>
                                 </div>
-                        </NavLink>
+                            </NavLink>
                         </li>
 
                     </div>
@@ -98,7 +103,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onShowPerson: (selectedPerson) => dispatch({type: actiontypes.SHOW_PERSON, loadedPerson: selectedPerson}),
+        onShowPerson: (selectedPerson) => dispatch({type: actiontypes.SHOW_PERSON, selectedPerson: selectedPerson}),
         onSearchForSuggestions: (suggestionsData) => dispatch({
             type: actiontypes.SUGGESTIONS_SEARCH,
             suggestionsData: suggestionsData

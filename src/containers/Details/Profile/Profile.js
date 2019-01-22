@@ -2,12 +2,55 @@ import React, {Component} from 'react';
 import * as actiontypes from "../../../store/actions";
 import {connect} from "react-redux";
 import * as params from '../../../params';
-import {NavLink} from 'react-router-dom';
 import classes from './Profile.scss';
 
 class Profile extends Component {
 
-    componentDidMount() {
+    state = {
+
+        account: [],
+        win: null,
+        loss: null
+    };
+
+
+    async componentDidMount() {
+
+
+        //fetch the win/rate and account informations of the selected player
+        const profileID = this.props.selectedPerson;
+
+        try {
+            let [fetchedAccount, fetchedwl] = await Promise.all([
+                fetch(params.ACCOUNT + profileID)
+                    .then(response => {
+
+                            response.json().then(json => {
+
+                                this.setState({account: json});
+                            })
+
+                        }
+                    ),
+
+                fetch(params.ACCOUNT + profileID + '/wl')
+                    .then(response => {
+
+                            response.json().then(json => {
+
+                                this.setState({win: json.win});
+                                this.setState({loss: json.loss});
+
+                            })
+
+                        }
+                    )
+            ]);
+
+
+        } catch (err) {
+            console.log(err);
+        }
 
 
     }
@@ -15,10 +58,9 @@ class Profile extends Component {
 
     render() {
 
-
         return (
             <div>
-                profile
+                {this.state.win}
             </div>
         );
     }
@@ -28,7 +70,8 @@ const mapStateToProps = state => {
     return {
         //search term
         search: state.name,
-        suggestions: state.suggestions
+        suggestions: state.suggestions,
+        selectedPerson: state.selectedPerson
     }
 };
 
