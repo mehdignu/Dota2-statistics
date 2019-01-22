@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import classes from './Details.scss';
-import Profile from './Profile/Profile';
-import * as params from '../../params';
-import * as actiontypes from "../../store/actions";
+import * as actiontypes from "../../../store/actions";
 import {connect} from "react-redux";
+import * as params from '../../../params';
+import {NavLink} from 'react-router-dom';
+import classes from './Profile.scss';
 
-class Details extends Component {
+class Profile extends Component {
 
     componentDidMount() {
 
@@ -17,8 +17,8 @@ class Details extends Component {
 
 
         return (
-            <div className={classes["details"]}>
-                <Profile/>
+            <div>
+                profile
             </div>
         );
     }
@@ -42,5 +42,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Details);
-
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

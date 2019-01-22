@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import Profile from '../../components/Stats/Profile/Profile';
 import * as actiontypes from "../../store/actions";
 import {connect} from "react-redux";
 import * as params from '../../params';
-import Aux from '../../hoc/Aux/Aux';
 import {NavLink} from 'react-router-dom';
 import classes from './Result.scss';
 
