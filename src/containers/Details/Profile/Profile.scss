@@ -1,0 +1,21 @@
+.profile {
+
+  position: relative;
+
+  &__wl {
+    display:block;
+
+
+    &--row{
+      display:inline-block;
+    }
+
+    &--cell {
+      display:block;
+    }
+
+
+
+  }
+
+}

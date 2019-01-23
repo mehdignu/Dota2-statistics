@@ -16,7 +16,6 @@ class Profile extends Component {
 
     async componentDidMount() {
 
-
         //fetch the win/rate and account informations of the selected player
         const profileID = this.props.selectedPerson;
 
@@ -52,15 +51,38 @@ class Profile extends Component {
             console.log(err);
         }
 
-
     }
 
 
     render() {
 
         return (
-            <div>
-                {this.state.win}
+            <div className={classes["profile"]}>
+
+                <img src="https://via.placeholder.com/150" alt="profile image" className={classes["profile__image"]}/>
+
+                <div className={classes["profile__name"]}>boo</div>
+
+                <div className={classes["profile__wl"]}>
+
+                    <div className={classes["profile__wl--row"]}>
+
+                        <h4 className={classes["profile__wl--cell"]}>win</h4>
+                        <span>118</span>
+
+                    </div>
+                    <div className={classes["profile__wl--row"]}>
+                        <h4 className={classes["profile__wl--cell"]}>loss</h4>
+                        <span>18</span>
+                    </div>
+                    <div className={classes["profile__wl--row"]}>
+                        <h4 className={classes["profile__wl--cell"]}>win rate</h4>
+                        <span>48%</span>
+                    </div>
+
+                </div>
+
+
             </div>
         );
     }
