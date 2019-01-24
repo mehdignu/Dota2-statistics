@@ -57,33 +57,59 @@ class Profile extends Component {
     render() {
 
         return (
-            <div className={classes["profile"]}>
 
-                <img src="https://via.placeholder.com/150" alt="profile image" className={classes["profile__image"]}/>
 
-                <div className={classes["profile__name"]}>boo</div>
+            <div className={classes["details"]}>
 
-                <div className={classes["profile__wl"]}>
+                <div className={classes["profile"]}>
 
-                    <div className={classes["profile__wl--row"]}>
+                    <img src="https://via.placeholder.com/150" alt="profile image"
+                         className={classes["profile__image"]}/>
 
-                        <h4 className={classes["profile__wl--cell"]}>win</h4>
-                        <span>118</span>
+                    <div className={classes["profile__name"]}>boo</div>
 
-                    </div>
-                    <div className={classes["profile__wl--row"]}>
-                        <h4 className={classes["profile__wl--cell"]}>loss</h4>
-                        <span>18</span>
-                    </div>
-                    <div className={classes["profile__wl--row"]}>
-                        <h4 className={classes["profile__wl--cell"]}>win rate</h4>
-                        <span>48%</span>
+                    <div className={classes["profile__wl"]}>
+
+                        <div className={classes["profile__wl--row"]}>
+
+                            <h4 className={classes["profile__wl--cell"]}>win</h4>
+                            <span>118</span>
+
+                        </div>
+                        <div className={classes["profile__wl--row"]}>
+                            <h4 className={classes["profile__wl--cell"]}>loss</h4>
+                            <span>18</span>
+                        </div>
+                        <div className={classes["profile__wl--row"]}>
+                            <h4 className={classes["profile__wl--cell"]}>win rate</h4>
+                            <span>48%</span>
+                        </div>
+
                     </div>
 
                 </div>
 
+                <div className={classes["overview"]}>
+
+                    <div className={classes["overview__box"]}>
+
+
+                    </div>
+
+                    <div className={classes["overview__box"]}>
+
+
+                    </div>
+
+                    <div className={classes["overview__box"]}>
+
+
+                    </div>
+
+                </div>
 
             </div>
+
         );
     }
 }
