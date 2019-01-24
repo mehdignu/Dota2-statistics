@@ -1,19 +1,41 @@
 .profile {
 
   position: relative;
+  top: 5%;
+  left: 35%;
+  transform: translate(0, 0);
+  width: 60rem;
+
+
+  &__image {
+    padding-left: 36%;
+  }
+
+  &__name {
+    font-size: 4rem;
+    text-align: center;
+  }
+
 
   &__wl {
-    display:block;
+    display: block;
+    position: absolute;
+    font-size: 2rem;
+    padding-left: 17rem;
 
 
-    &--row{
-      display:inline-block;
+    & > div {
+      display: inline-block;
+      padding-left: 25px;
+      text-align: center;
+
+    }
+
+    &--row {
     }
 
     &--cell {
-      display:block;
     }
-
 
 
   }
